@@ -1,0 +1,55 @@
+### Teapot April's fool joke - Should return: "418 - I am a teapot!"
+GET {{apiuri}}/teapot HTTP/1.1
+
+
+### Register user
+POST {{apiuri}}/user/register
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "email": "examples@ex.com",
+  "password": "hashthispwplease",
+  "firstname": "Hello",
+  "lastname": "There"
+}
+
+{{RESPONSE}}
+
+### Login user
+POST {{apiuri}}/user/login
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "hashthispwplease"
+}
+
+{{RESPONSE}}
+
+### Create vault entry
+POST {{apiuri}}/vault/create
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "email": "examples@ex.com",
+  "password": "hashthispwplease",
+  "firstname": "Hello",
+  "lastname": "There"
+}
+
+### Create Tag
+### Trying to create a tag under the same user_id and name will cause a UNIQUE contraint error
+POST {{apiuri}}/tag/create
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "name": "Social",
+  "description": "Tag for social vault entries"
+}
+
+### List all vault entries
+GET {{apiuri}}/vault/list
+Content-Type: application

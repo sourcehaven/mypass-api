@@ -1,0 +1,19 @@
+info:
+  contact: {}
+paths:
+  /teapot:
+    get:
+      consumes:
+      - application/json
+      description: Responds with HTTP status 418 I'm a teapot.
+      produces:
+      - application/json
+      responses:
+        "418":
+          description: I am a teapot!
+          schema:
+            type: string
+      summary: I'm a teapot
+      tags:
+      - examples
+swagger: "2.0"

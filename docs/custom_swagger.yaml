@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: Swagger - MyPass API
+  description: API for MyPass to manage users, vaults and tags.
+  version: 0.0.1-dev
+servers:
+  - url: http://127.0.0.1:7277
+    description: Development server
+paths:
+  /register:
+    post:
+      summary: Creates a new user.
+      description: Creates/registers a new user.
+      tags:
+        - user
+      responses:
+        "201":
+          description: User created successfully!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: int
+                    format: int64
+                    example: 1
+                  createdAt:
+                    type: string
+                    example: 2023-11-22 10:04:37.675943666 +0000 UTC m=+0.000018281
+        "500":
+          description: Some kind of internal server error!
+  /teapot:
+    get:
+      summary: I'm a teapot
+      description: Responds with HTTP status 418 I'm a teapot.
+      tags:
+        - misc
+      responses:
+        "418":
+          description: I am a teapot!
+components: {}
+x-original-swagger-version: "2.0"

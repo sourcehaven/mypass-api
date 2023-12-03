@@ -1,0 +1,31 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/teapot": {
+            "get": {
+                "description": "Responds with HTTP status 418 I'm a teapot.",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "example"
+                ],
+                "summary": "I'm a teapot",
+                "responses": {
+                    "418": {
+                        "description": "I am a teapot!",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
